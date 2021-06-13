@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.thymeleaf.org ">
+<div th:insert="head"></div>
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="note : ${notes}">
+				<td th:text="${note.id}"></td>
+				<td th:text="${note.name}"></td>
+				<td th:text="${note.description}"></td>
+				<td><a th:href="@{/edit/{id}(id=${note.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${note.id})}">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

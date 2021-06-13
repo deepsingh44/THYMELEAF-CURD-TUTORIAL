@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.thymeleaf.org ">
+
+<div th:insert="head"></div>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+
+			<form action="#" th:action="@{/updatenote}" th:object="${note}"
+				method="post">
+				<div class="form-group">
+					<label for="id" class="mr-sm-2">ID:</label> <input type="text"
+						th:field="*{id}" class="form-control mb-2 mr-sm-2"
+						placeholder="Enter ID" id="id">
+				</div>
+				<div class="form-group">
+					<label for="name" class="mr-sm-2">Name:</label> <input type="text"
+						th:field="*{name}" class="form-control mb-2 mr-sm-2"
+						placeholder="Enter Name" id="name">
+				</div>
+				<div class="form-group">
+					<label for="description" class="mr-sm-2">Description</label> <input
+						type="text" th:field="*{description}"
+						class="form-control mb-2 mr-sm-2" placeholder="Enter Description"
+						id="description">
+				</div>
+
+				<p>
+					<input type="submit" value="Update" />
+				</p>
+			</form>
+
+
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+</div>
